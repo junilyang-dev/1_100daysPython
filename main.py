@@ -1,31 +1,26 @@
-myName = input("What's your name? ")
-myLunch = input("What are you having for lunch? ")
-print(myName, "is going to be chowing down on", myLunch, "very soon!")
-number = input("Give me a number: ")
-group = input("Give me a collective noun for a group of things: ")
-thing = input("Give me the name of a weird or wacky thing: ")
-print("No I don't think that", number, "is a", group, "of", thing,". That's just odd.")
-print("=== Your Song Generator ===")
-print("""You'll be asked a bunch of questions
-then we'll make you up an amazing
-song, totally copyright free 😭""")
-print()
-
-person = input("Name a person famous for something good: ")
-thing = input("Name a thing they did: ")
-place = input("Name a place you like: ")
-rhyme = input("Give me a verb that rhymes with your person's name: ")
+print("Uh, oh, you've been given a", "\033[31m", "warning", "\033[0m", "for being a bad, bad person.")
+print("color", "\033[31m", "red", "\033[30m", "black",
+      "\033[32m", "green",
+      "\033[33m", "yellow",
+      "\033[34m", "blue",
+      "\033[35m", "purple",
+      "\033[36m", "cyan",
+      "\033[37m", "white",
+      "\033[0m", "default")
+print("Welcome to your Adventure Story Simulator.")
+print ()
+print("I am going to ask you a bunch of questions and then create an epic story with you as the star.")
 
 print()
-print("There was a person called", person, "Who did something cool like", thing, "at the wonderful", place,  "where you'll find me", rhyme)
-
-food = input("Name a type of food: ")
-plant = input("Name a plant: ")
-cookingType = input("What is a way to cook something?")
-burntFood = input("How do you describe burnt food?")
-householdItem = input("Name something in your house: ")
+name = input("What is your name? ")
+print()
+enemyName = input("What is your enemy's name? ")
+print()
+superPower = input("What is your super power? ")
+print()
+live = input("Where do you live?")
+print()
+food = input("What is your favorite food?")
 
 print()
-print("Tonight's dinner:")
-
-print("For dinner you should make", cookingType, food, "with", burntFood, plant, "on a plate of", householdItem)
+print("Hello", name, "Your ability to", superPower, "will make sure you never have to look at", enemyName, "again." "Go eat", food, "as you walk down the streets of", live, "and use", superPower, "for good and not evil!")

@@ -1,26 +1,43 @@
-print("Uh, oh, you've been given a", "\033[31m", "warning", "\033[0m", "for being a bad, bad person.")
-print("color", "\033[31m", "red", "\033[30m", "black",
-      "\033[32m", "green",
-      "\033[33m", "yellow",
-      "\033[34m", "blue",
-      "\033[35m", "purple",
-      "\033[36m", "cyan",
-      "\033[37m", "white",
-      "\033[0m", "default")
-print("Welcome to your Adventure Story Simulator.")
-print ()
-print("I am going to ask you a bunch of questions and then create an epic story with you as the star.")
 
-print()
-name = input("What is your name? ")
-print()
-enemyName = input("What is your enemy's name? ")
-print()
-superPower = input("What is your super power? ")
-print()
-live = input("Where do you live?")
-print()
-food = input("What is your favorite food?")
+myName = input("What's your name?: ")
+if myName == "David":
+  print("Welcome Dude!")
+  print("You're just the baldest dude I've ever seen")
+else:
+  print("Who on earth are you?!")
 
+catsOrDogs = input("Are you a cat person? Or a dog person?: ")
+if catsOrDogs == "cat":
+  print("Meow")
+else:
+  print("Woof")
+
+drink = input("Do you prefer coffee or tea?")
+if drink == "coffee":
+  print("Tea is better.")
+else:
+  print("Excellent choice.")
+
+print("Which character are you from 'Avengers?'")
 print()
-print("Hello", name, "Your ability to", superPower, "will make sure you never have to look at", enemyName, "again." "Go eat", food, "as you walk down the streets of", live, "and use", superPower, "for good and not evil!")
+print("Answer these questions and let's find out.")
+print()
+print("Please use Y or N for yes and no.")
+
+likeGreen = input("Do you like the color green?: ")
+if likeGreen == "Y":
+  print("You must be the Hulk!")
+
+IronIsCool = input("Do you think building robots is cool?: ")  
+if IronIsCool == "Y":
+  print("You must be Iron Man. Cool suit!")
+
+TimeTravel = input("Do you like traveling through time?: ")  
+if TimeTravel == "Y":
+  print("You must be Captain America!")
+
+Strong = input("Are you super strong?: ")
+if Strong == "Y":
+  print("You have got to be Thor!")
+else:
+  print("I guess you are not like anyone from 'Avengers.'")

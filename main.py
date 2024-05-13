@@ -1,43 +1,36 @@
+print("SECURE LOGIN")
+username = input("Username > ")
+password = input("Password> ")
 
-myName = input("What's your name?: ")
-if myName == "David":
-  print("Welcome Dude!")
-  print("You're just the baldest dude I've ever seen")
+if username == "mark" and password == "password":
+ print("Welcome Mark!")
+elif username == "suzanne" and password == "Su74nne":
+ print("Hey there Suzanne!")
 else:
-  print("Who on earth are you?!")
+ print("Go away!")
 
-catsOrDogs = input("Are you a cat person? Or a dog person?: ")
-if catsOrDogs == "cat":
-  print("Meow")
+season = input("What is your favorite season?")
+if season == "spring":
+  print("Ah! The birds are chirping and flowers blooming.")
+elif season == "summer":
+  print("Catch some sun and cool off with a lemonade.")
+elif season == "autumn":
+  print("The leaves are changing and the air is crisp. Enjoy!")
+elif season == "winter":
+  print("Stay warm by the fire and watch the snow fall.")
+else: 
+  print("I don't know that season. Please try again.")
+
+
+print("Secure Login")
+username = input("What is your username?")
+password = input("What is your password?")
+
+if username == "David" and password == "PyTh0nR*cks":
+  print("Welcome, David! You are looking nice today!")
+elif username == "Becky" and password == "Repl!t4evEr":
+  print("Hi Becky! Love your hair today!")
+elif username == "Bill" and password == "SmashTHEb*gs!":
+  print("Yo! Bill! What up?!")
 else:
-  print("Woof")
-
-drink = input("Do you prefer coffee or tea?")
-if drink == "coffee":
-  print("Tea is better.")
-else:
-  print("Excellent choice.")
-
-print("Which character are you from 'Avengers?'")
-print()
-print("Answer these questions and let's find out.")
-print()
-print("Please use Y or N for yes and no.")
-
-likeGreen = input("Do you like the color green?: ")
-if likeGreen == "Y":
-  print("You must be the Hulk!")
-
-IronIsCool = input("Do you think building robots is cool?: ")  
-if IronIsCool == "Y":
-  print("You must be Iron Man. Cool suit!")
-
-TimeTravel = input("Do you like traveling through time?: ")  
-if TimeTravel == "Y":
-  print("You must be Captain America!")
-
-Strong = input("Are you super strong?: ")
-if Strong == "Y":
-  print("You have got to be Thor!")
-else:
-  print("I guess you are not like anyone from 'Avengers.'")
+  print("You do not have access. Go away!")

@@ -1,36 +1,38 @@
-print("SECURE LOGIN")
-username = input("Username > ")
-password = input("Password> ")
+# 👇🏻 Write your code here 👇🏻:
 
-if username == "mark" and password == "password":
- print("Welcome Mark!")
-elif username == "suzanne" and password == "Su74nne":
- print("Hey there Suzanne!")
-else:
- print("Go away!")
+def get_yearly_revenue(monthly_revenue):
+  yearly_revenue = monthly_revenue * 12
+  return yearly_revenue
 
-season = input("What is your favorite season?")
-if season == "spring":
-  print("Ah! The birds are chirping and flowers blooming.")
-elif season == "summer":
-  print("Catch some sun and cool off with a lemonade.")
-elif season == "autumn":
-  print("The leaves are changing and the air is crisp. Enjoy!")
-elif season == "winter":
-  print("Stay warm by the fire and watch the snow fall.")
-else: 
-  print("I don't know that season. Please try again.")
+def get_yearly_expenses(monthly_expenses):
+  yearly_expenses = monthly_expenses * 12
+  return yearly_expenses
 
+def get_tax_amount(profit):
+  tax_amount = 0
+  if profit > 100000 :
+    tax_amount = profit / 100 * 25
+  else :
+    tax_amount = profit / 100 * 15
+  return tax_amount
 
-print("Secure Login")
-username = input("What is your username?")
-password = input("What is your password?")
+def apply_tax_credits(tax_amount, tax_credits):
+  final_tax_amount = tax_amount * tax_credits
+  return final_tax_amount
 
-if username == "David" and password == "PyTh0nR*cks":
-  print("Welcome, David! You are looking nice today!")
-elif username == "Becky" and password == "Repl!t4evEr":
-  print("Hi Becky! Love your hair today!")
-elif username == "Bill" and password == "SmashTHEb*gs!":
-  print("Yo! Bill! What up?!")
-else:
-  print("You do not have access. Go away!")
+# ❌ Don't touch anthing below this line ❌
+
+monthly_revenue = 5500000
+monthly_expenses = 2700000
+tax_credits = 0.01
+
+yearly_revenue = get_yearly_revenue(monthly_revenue)
+yearly_expenses = get_yearly_expenses(monthly_expenses)
+
+profit = yearly_revenue - yearly_expenses
+
+tax_amount = get_tax_amount(profit)
+
+final_tax_amount = tax_amount - apply_tax_credits(tax_amount, tax_credits)
+
+print(f"Your tax bill is: ${final_tax_amount}")

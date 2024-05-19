@@ -1,19 +1,16 @@
-while(True):
-  FirstNumber = int(input("Choose a number: \n"))
-  SecondNumber = int(input("Choose another one: \n"))
-  Operation = input("Choose an operation: \n\tOptions are: + , - , * or /.\nWhile you write the operation, please write it in lowercase.\n\tWrite 'exit' to finish.\n")
-  # Addition
-  if Operation == "+" :
-    print("Result: ", FirstNumber + SecondNumber)
-  # Subtraction
-  elif Operation == "-" :
-    print("Result: ", FirstNumber - SecondNumber)
-  # Multiplication
-  elif Operation == "*" :
-    print("Result: ", FirstNumber * SecondNumber)
-  # Division
-  elif Operation == "/" :
-    print("Result: ", FirstNumber / SecondNumber)
-  # Exit
-  elif Operation == "exit" :
-    break
+import requests
+
+movie_ids = [
+    238, 680, 550, 185, 641, 515042, 152532, 120467, 872585, 906126, 840430
+]
+
+for movie_id in movie_ids:
+    url = f"https://nomad-movies.nomadcoders.workers.dev/movies/{movie_id}"
+    response = requests.get(url)
+    movie_data = response.json()
+    print(
+        "title : ",movie_data["title"],
+        "\n overview : " ,movie_data["overview"], 
+        "\n vote_average : ",movie_data["vote_average"],
+        "\n -----------------------------------------------"
+        )

@@ -1,22 +1,32 @@
+from flask import Flask, render_template, request
 import berlinstartupjobs
+import weworkremotely
+import web3
 
-print("web scrapper")
+app = Flask("JobScrapper")
+siteaddress = ["https://berlinstartupjobs.com/skill-areas/","https://weworkremotely.com/remote-jobs/search?utf8=%E2%9C%93&term=","https://web3.career/"]
+site = ["berlinstartupjobs","weworkremotely","web3"]
 
-print("1. berlinstartupjobs\n2. weworkremotely\n3. web3")
-siteaddress = ["https://berlinstartupjobs.com","https://weworkremotely.com","https://web3.career"]
-sitenum = int(input("enter number site : "))
-print(sitenum, siteaddress[sitenum-1])
+@app.route('/')
+def search():
+    return render_template('search.html')
 
-print("choose search lang\n1. python\n2. javascript\n3. java")
-BprogramingLanguage = ["/skill-areas/python/", "/skill-areas/javascript/", "/skill-areas/java/"]
-searchLang = int(input("enter number search lang: "))
-print(searchLang, BprogramingLanguage[searchLang-1])
-searchSite = siteaddress[sitenum-1] + BprogramingLanguage[searchLang-1]
-print("search site : " + searchSite)
+@app.route('/result', methods=['POST'])
+def result():
+    website = request.form['website']
+    websiteNm = site[int(website)-1]
+    skill = request.form['skill']
+    scraped_data = web_scraper(website, skill)
+    return render_template('result.html', website=websiteNm, skill=skill, data=scraped_data)
 
-Barr = []
-Warr = []
-W3arr = []
-all_jobs = [Barr, Warr, W3arr]
-berlinstartupjobs.scrape_page(searchSite, all_jobs[sitenum-1])
-print(all_jobs)
+def web_scraper(website, skill):
+    url = siteaddress[int(website)-1] + skill
+    data = []
+    if website == '1':
+      berlinstartupjobs.scrape_page(url, data)
+    elif website == '2':
+      weworkremotely.scrape_page(url, data)
+    else:
+      web3.get_pages(url, data)
+    return data
+app.run("0.0.0.0")
